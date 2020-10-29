@@ -60,12 +60,14 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray900, "-nf", col_green600, "-sb", col_green900, "-sf", col_white, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *neomuttcmd[]  = { "st", "neomutt", NULL };
+static const char *newsboatcmd[]  = { "st", "newsboat", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      spawn,          SHCMD("$BROWSER") },
+	{ MODKEY,                       XK_n,      spawn,          {.v = newsboatcmd } },
 	{ MODKEY,                       XK_m,      spawn,          {.v = neomuttcmd } },
 	{ MODKEY,                       XK_space,  togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
