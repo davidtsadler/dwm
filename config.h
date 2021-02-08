@@ -61,10 +61,12 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *neomuttcmd[]  = { "st", "neomutt", NULL };
 static const char *newsboatcmd[]  = { "st", "newsboat", NULL };
+static const char *amforacmd[]  = { "st", "amfora", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_a,      spawn,          {.v = amforacmd } },
 	{ MODKEY,                       XK_b,      spawn,          SHCMD("$BROWSER") },
 	{ MODKEY,                       XK_m,      spawn,          {.v = neomuttcmd } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = newsboatcmd } },
